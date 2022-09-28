@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faCalendarDays, faChartColumn, faDumbbell, faFire, faHome} from '@fortawesome/free-solid-svg-icons';
-import { NavBarItem } from 'src/app/entity/nav-bar-item';
-
+import { Globals } from 'src/app/entity/globals';
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
@@ -9,22 +7,11 @@ import { NavBarItem } from 'src/app/entity/nav-bar-item';
 })
 export class NavBarComponent implements OnInit {
 
-  navbarIcons = {
-    "headerIcon" : faDumbbell,
-    "homeIcon" : faHome,
-    "statsIcon" : faChartColumn,
-    "calendarIcon" : faCalendarDays,
-    "workoutIcon" : faFire
+  global : Globals
+
+  constructor(global : Globals) {
+    this.global = global
   }
-
-  navBarItems: NavBarItem[] = [
-    { title: "Ana Sayfa", icon: this.navbarIcons["homeIcon"], path: "/home" },
-    { title: "İstatistikler", icon: this.navbarIcons["statsIcon"], path: "/stats" },
-    { title: "Takvim", icon: this.navbarIcons["calendarIcon"], path: "/calendar" },
-    { title: "Antrenman", icon: this.navbarIcons["workoutIcon"], path: "/workout" }
-  ];
-
-  constructor() { }
 
   ngOnInit(): void {
   }

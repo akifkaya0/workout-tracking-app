@@ -1,5 +1,5 @@
 .navbar-container{
-  width: 190px;
+  width: 220px;
   border-right:2px solid #323136 ;
   height: 100vh;
   padding: 15px;
@@ -16,11 +16,11 @@
 nav{
   width: 100%;
   margin-top: 20px;
-}
 
-nav a{
-  text-decoration: none;
-  color: #737376;
+  a{
+    text-decoration: none;
+    color: #737376;
+  }
 }
 
 .nav-item-container{
@@ -42,15 +42,17 @@ nav a{
   a{
     width: 100%;
     display: flex;
+    align-items: center;
   }
 
   p{
-    margin: 0 0 0 15px;
+    margin: 0 0 0 20px;
     font-weight: 400;
+    font-size: 13px;
   }
 
   fa-icon{
-    margin-left: 20px;
+    margin-left: 25px;
   }
 }
 
