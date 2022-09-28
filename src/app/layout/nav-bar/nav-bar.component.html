@@ -1,0 +1,20 @@
+<div class="navbar-container">
+
+  <div class="home-icon">
+    <fa-icon [icon]="navbarIcons['headerIcon']" size="3x"></fa-icon>
+  </div>
+
+  <nav>
+    <div class="nav-item-container" *ngFor="let navItem of navBarItems">
+      <div class="nav-item">
+        <a [routerLink]="navItem.path" routerLinkActive="nav-item-active" [routerLinkActiveOptions]="{exact:true}">
+
+          <fa-icon [icon]="navItem.icon" size="lg"></fa-icon>
+          <p>{{navItem.title}}</p>
+
+        </a>
+      </div>
+    </div>
+  </nav>
+
+</div>
