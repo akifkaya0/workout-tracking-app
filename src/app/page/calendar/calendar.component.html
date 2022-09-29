@@ -1,0 +1,49 @@
+<h2>{{getPageName()}}</h2>
+
+<div class="stats-and-calendar-container">
+
+  <mat-card class="stats-card" *ngFor="let item of statistics">
+    <mat-card-subtitle>{{item.title}}</mat-card-subtitle>
+    <div class="stats-card-title">
+      <mat-card-title>{{item.value}}</mat-card-title>
+      <p class="stats-card-chip" [ngStyle]="{backgroundColor : (true ? '#91DD83' : '#DD8383')}">-</p>
+    </div>
+    <mat-card-subtitle>{{item.subtitle}}</mat-card-subtitle>
+  </mat-card>
+
+  <div class="calendar">
+
+    <div class="calendar-filter">
+    </div>
+
+    <div class="calendar-base">
+
+      <div class="calendar-header">
+        <div class="calendar-title">
+          Antrenman Takvimi
+        </div>
+        <div class="month">
+          <button [disabled]="getSelectedMonth() == 0" mat-icon-button (click)="setSelectedMonth(-1)">
+            <fa-icon [icon]="global.icons.leftArrow" size="lg"></fa-icon>
+          </button>
+
+          <div class="long-month-name">{{getSelectedLongMonthName()}}</div>
+
+          <button [disabled]="getSelectedMonth() == 11" mat-icon-button (click)="setSelectedMonth(1)">
+            <fa-icon [icon]="global.icons.rightArrow" size="lg"></fa-icon>
+          </button>
+          <div class="triangle-right"></div>
+        </div>
+      </div>
+
+      <hr class="month-line" />
+
+      <div class="days">
+        <span *ngFor="let day of getShortWeekdayNames()">{{day.toUpperCase()}}</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
