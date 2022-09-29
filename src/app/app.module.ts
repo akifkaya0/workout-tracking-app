@@ -10,6 +10,7 @@ import { CalendarComponent } from './page/calendar/calendar.component';
 import { Globals } from './entity/globals';
 import {MatCardModule} from '@angular/material/card';
 import { FormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { FormsModule } from '@angular/forms';
     FontAwesomeModule,
     MatCardModule,
     FormsModule,
+    HttpClientModule
   ],
   providers: [],
   providers: [Globals],

@@ -1,0 +1,25 @@
+{
+  "workoutDay" : [
+    {
+      "id" : "1",
+      "day" : 28,
+      "month" : 9,
+      "muscleGroups" : ["Göğüs" , "Triceps"]
+    },
+    {
+      "day" : 29,
+      "month" : 9,
+      "muscleGroups" : ["Göğüs" , "Triceps"]
+    },
+    {
+      "day" : 28,
+      "month" : 8,
+      "muscleGroups" : ["Göğüs" , "Triceps"]
+    }
+    ,
+    {
+      "day" : 27,
+      "month" : 7
+    }
+  ]
+}

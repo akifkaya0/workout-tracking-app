@@ -8,7 +8,7 @@
   }
 }
 
-.stats-card {
+.stats-card-top {
   width: 32.4%;
   margin: 20px 5px;
   height: 120px;
@@ -76,6 +76,9 @@
   border-radius: 12.5px;
   color: #353D49;
   font-weight: 500;
+  align-items: end;
+  display: flex;
+  justify-content: center;
 }
 
 
@@ -83,11 +86,12 @@
 //  CALENDAR
 
 .calendar {
-  width: 66%;
+  width: 65.5%;
   height: 620px;
   border-radius: 15px;
   background-color: #1f1e26;
   display: flex;
+  margin: 0px 5px;
 }
 
 .calendar-filter {
@@ -107,7 +111,7 @@
 }
 
 .calendar-title {
-  font-size: 25px;
+  font-size: 20px;
   font-weight: bold;
   color: #e8e8e8;
 }
@@ -144,6 +148,33 @@
   display: flex;
   justify-content: space-between;
 }
+
+.num-dates {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 10px 39px;
+  height: 420px;
+}
+
+.day {
+  height: 69px;
+  width: 69px;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.day span {
+  position: absolute;
+}
+
+.not-selected-month {
+  color: #A7A7AA;
+}
+
+
 
 
 .long-month-name {

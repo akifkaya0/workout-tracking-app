@@ -2,7 +2,7 @@
 
 <div class="stats-and-calendar-container">
 
-  <mat-card class="stats-card" *ngFor="let item of statistics">
+  <mat-card class="stats-card-top" *ngFor="let item of statistics">
     <mat-card-subtitle>{{item.title}}</mat-card-subtitle>
     <div class="stats-card-title">
       <mat-card-title>{{item.value}}</mat-card-title>
@@ -40,6 +40,17 @@
 
       <div class="days">
         <span *ngFor="let day of getShortWeekdayNames()">{{day.toUpperCase()}}</span>
+      </div>
+
+      <div class="num-dates">
+
+        <div class="day" *ngFor="let day of getCalendarDays()">
+          <div [className]="day?.className">
+            <div class="day-background"></div>
+          </div>
+          <span [ngClass]="{'not-selected-month' : (day ? day.date.getMonth() != selectedDate.getMonth() : false)}">{{day?.date?.getDate()}}</span>
+        </div>
+
       </div>
 
     </div>
