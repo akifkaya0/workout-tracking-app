@@ -8,7 +8,7 @@ export class Globals {
     "homeIcon": faHome,
     "statsIcon": faChartColumn,
     "calendarIcon": faCalendarDays,
-    "workoutIcon": faFire,
+    "trainingIcon": faFire,
     "rightArrow": faCaretRight,
     "leftArrow": faCaretLeft
   }
@@ -17,7 +17,7 @@ export class Globals {
     { title: "Ana Sayfa", icon: this.icons["homeIcon"], path: "/home" },
     { title: "İstatistikler", icon: this.icons["statsIcon"], path: "/stats" },
     { title: "Takvim", icon: this.icons["calendarIcon"], path: "/calendar" },
-    { title: "Antrenman", icon: this.icons["workoutIcon"], path: "/workout" }
+    { title: "Antrenman", icon: this.icons["trainingIcon"], path: "/training" }
   ];
 
   public allMuscleGroups = [

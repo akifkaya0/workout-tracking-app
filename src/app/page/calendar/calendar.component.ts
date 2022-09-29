@@ -20,6 +20,9 @@ export class CalendarComponent implements OnInit {
     { title: "-", subtitle: "-", value: 0 }
   ];
 
+  //  Filter Variables
+  selectedMuscleGroup: string = "Tümünü Seç";
+
   // Calendar Variables
   selectedDate: Date = new Date();
   calendarDays: (CalendarDay | null)[] = [];
@@ -36,6 +39,10 @@ export class CalendarComponent implements OnInit {
 
   getPageName() { return this.global.pages.find(item => item.path == this.router.url)?.title }
 
+  setSelectedMuscleGroup(event: string) {
+    this.selectedMuscleGroup = event;
+    this.setCalendarDaysClassName();
+  }
   setSelectedMonth(index: number) {
 
     this.selectedDate.setMonth(this.selectedDate.getMonth() + index);
@@ -95,6 +102,45 @@ export class CalendarComponent implements OnInit {
 
     this.calendarDays = daysArray
   }
+  setCalendarDaysClassName() {
+
+    this.calendarDays.forEach(day => {
+
+      if (day == null) return;
+
+      var record = this.workoutDays.find(item =>
+        item.day == day.date.getDate() && item.month == (day.date.getMonth() + 1)
+      )
+
+      if (record) {
+
+
+        if (record.muscleGroups?.length) {
+
+          if (this.selectedMuscleGroup == "Tümünü Seç") {
+            day.className = "tumunu-sec"
+            return
+          };
+
+          if (record.muscleGroups.find(item => item == this.selectedMuscleGroup)) {
+
+            var muscleGroup = this.global.allMuscleGroups.find(item => item.name == this.selectedMuscleGroup)
+
+            if (muscleGroup) day.className = muscleGroup.className;
+
+            return;
+
+          }
+
+        }
+
+      }
+
+      day.className = "";
+
+    });
+
+  }
   setWorkoutDays(month: number) {
     this.workoutDayService.getWorkoutDaysOfThisMonth(month).subscribe(res => {
       this.workoutDays = res
@@ -102,6 +148,11 @@ export class CalendarComponent implements OnInit {
       this.setCalendarDaysClassName();
       this.setMonthlyWorkoutCount();
     });
+  }
+
+
+  getMuscleGroupClass(name: string) {
+    return this.global.allMuscleGroups.find(item => item.name == name)?.className
   }
   getSelectedMonth() {
     return this.selectedDate.getMonth();

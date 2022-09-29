@@ -10,6 +10,9 @@ import { CalendarComponent } from './page/calendar/calendar.component';
 import { Globals } from './entity/globals';
 import {MatCardModule} from '@angular/material/card';
 import { FormsModule } from '@angular/forms';
+import {MatRadioModule} from '@angular/material/radio';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatButtonModule} from '@angular/material/button';
 import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
@@ -23,13 +26,14 @@ import {HttpClientModule} from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    FontAwesomeModule
     FontAwesomeModule,
     MatCardModule,
+    MatRadioModule,
     FormsModule,
-    HttpClientModule
+    MatButtonModule,
+    HttpClientModule,
+    ReactiveFormsModule,
   ],
-  providers: [],
   providers: [Globals],
   bootstrap: [AppComponent]
 })
