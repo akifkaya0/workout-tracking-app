@@ -1,0 +1,123 @@
+@import '../training.component.scss';
+
+.training-detail-container {
+  width: 100%;
+  height: auto;
+
+  mat-card {
+    background-color: #1f1e26;
+    color: white;
+  }
+
+  mat-card-header {
+    align-items: baseline;
+  }
+}
+
+.exercise-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.exercise {
+  width: 48%;
+  margin: 1%;
+  border: 1px solid;
+  height: 300px;
+  border-radius: 10px;
+  display: flex;
+
+
+  .exercise-image {
+    width: 30%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+
+    div {
+      height: 100%;
+      filter: brightness(0.9);
+    }
+  }
+
+  .exercise-content {
+    width: 70%;
+    height: 100%;
+    text-align: center;
+
+
+    mat-form-field {
+
+      margin-top: 10px;
+    }
+
+    ::ng-deep {
+
+      .mat-select-value,
+      ::ng-deep .mat-select-arrow,
+      ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline-thick {
+        color: white;
+      }
+
+      .mat-form-field {
+        font-size: 18px;
+      }
+
+      .mat-form-field-flex {
+        height: 45px !important;
+        width: 280px !important;
+        text-align: center !important;
+      }
+
+      .mat-form-field-infix {
+        padding: 0 !important;
+      }
+
+      .mat-select-panel .mat-option {
+        height: 2em !important;
+      }
+
+      .mat-form-field-appearance-outline .mat-select-arrow-wrapper {
+        transform: translateY(0) !important;
+      }
+
+      .mat-form-field-wrapper {
+        padding-bottom: 0;
+      }
+
+    }
+
+  }
+
+}
+
+h3 {
+  margin: 0px 10px;
+}
+
+.set-repetition-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+
+
+
+
+.exercise-weight-container {
+
+  font-size: 30px;
+  font-weight: 700;
+  height: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+}
+
+

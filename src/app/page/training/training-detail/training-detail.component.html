@@ -1,0 +1,38 @@
+<div class="training-detail-container">
+
+  <mat-card *ngFor="let item of selectedMuscleGroups ; let muscleGroupIndex = index">
+
+    <mat-card-header>
+      <mat-card-title>{{item.title}}</mat-card-title>
+      <h3>Egzersiz</h3>
+    </mat-card-header>
+
+    <div class="exercise-container">
+      <div [class]="'exercise'" *ngFor="let exercise of item.exercises ; let exerciseIndex = index">
+        <div class="exercise-image"></div>
+        <div class="exercise-content">
+
+          <mat-form-field appearance="outline">
+            <mat-select [(ngModel)]="exercise.title" name="food">
+              <mat-option *ngFor="let title of getAllExercises(item.title)" [value]="title">
+                {{title}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <div class="set-repetition-container">
+            <h3>Tekrar</h3>
+          </div>
+
+          <div class="exercise-weight-container" >
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+  </mat-card>
+
+</div>
+
