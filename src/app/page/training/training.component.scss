@@ -1,0 +1,165 @@
+.training-container {
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.training-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h2{
+    margin-top: 0px;
+    margin-bottom: 7px;
+    margin-left: 10px;
+  }
+
+  button{
+    border-radius: 10px;
+    border: 1px solid white;
+    width: 100px;
+    height: 30px;
+    margin-right: 30px
+  }
+  .mat-stroked-button{
+    line-height: 30px;
+  }
+}
+
+mat-checkbox {
+  margin: 6.5px;
+}
+
+::ng-deep {
+
+  .mat-checkbox-frame{
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5;
+    border-radius: 10px !important;
+  }
+
+  .mat-checkbox-layout::before{
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 25px;
+    height: 255px;
+    padding-top: 25px;
+  }
+
+  .mat-checkbox-inner-container {
+    margin: 0px !important;
+    width: 280px !important;
+    height: 280px !important;
+  }
+
+  .mat-ripple-element {
+    border-radius: 0px !important;
+  }
+
+  .mat-checkbox {
+
+    .mat-checkbox-ripple {
+      width: 100% !important;
+      height: 100% !important;
+      left: 0 !important;
+      top: 0 !important;
+    }
+
+    .mat-ripple-element {
+      width: 100% !important;
+      height: 100% !important;
+      left: 0 !important;
+      top: 0 !important;
+    }
+
+  }
+
+  .mat-checkbox-checked.mat-primary .mat-checkbox-background {
+    background-color: rgb(0, 0, 0, 0) !important;
+  }
+
+}
+
+
+
+
+
+// background images
+
+.gogus {
+  ::ng-deep .mat-checkbox-layout::before {
+    content : "Göğüs"
+  }
+  ::ng-deep .mat-checkbox-frame{
+    background-image: url("/assets/gogus.png");
+  }
+
+}
+
+.biceps {
+  ::ng-deep .mat-checkbox-layout::before {
+    content : "Biceps"
+  }
+  ::ng-deep .mat-checkbox-frame{
+    background-image: url("/assets/biceps.png");
+  }
+}
+
+.sırt {
+  ::ng-deep .mat-checkbox-layout::before {
+    content : "Sırt"
+  }
+  ::ng-deep .mat-checkbox-frame{
+    background-image: url("/assets/sırt.png");
+  }
+}
+
+.triceps {
+  ::ng-deep .mat-checkbox-layout::before {
+    content : "Triceps"
+  }
+  ::ng-deep .mat-checkbox-frame{
+    background-image: url("/assets/triceps.png");
+  }
+}
+
+.omuz {
+  ::ng-deep .mat-checkbox-layout::before {
+    content : "Omuz"
+  }
+  ::ng-deep .mat-checkbox-frame{
+    background-image: url("/assets/omuz.png");
+  }
+}
+
+.bacak {
+  ::ng-deep .mat-checkbox-layout::before {
+    content : "Bacak"
+  }
+  ::ng-deep .mat-checkbox-frame{
+    background-image: url("/assets/bacak.png");
+  }
+}
+
+.bilek {
+  ::ng-deep .mat-checkbox-layout::before {
+    content : "Bilek"
+  }
+  ::ng-deep .mat-checkbox-frame{
+    background-image: url("/assets/bilek.png");
+  }
+}
+
+.trapez {
+  ::ng-deep .mat-checkbox-layout::before {
+    content : "Trapez"
+  }
+  ::ng-deep .mat-checkbox-frame{
+    background-image: url("/assets/trapez.png");
+  }
+}

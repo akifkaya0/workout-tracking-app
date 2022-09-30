@@ -1,0 +1,12 @@
+<div class="training-header">
+  <h2>Bugün Ne Çalıştın?</h2>
+  <button mat-stroked-button
+  [routerLink]="['/training-detail']" [queryParams]="trainingGroups.value">İleri</button>
+</div>
+
+<div class="training-container">
+  <section [formGroup]="trainingGroups">
+    <mat-checkbox *ngFor="let item of global.allMuscleGroups.slice(1) ; let i = index" [class]="global.allMuscleGroups[i+1].className"
+      [formControlName]="item.name" color="primary"></mat-checkbox>
+  </section>
+</div>
