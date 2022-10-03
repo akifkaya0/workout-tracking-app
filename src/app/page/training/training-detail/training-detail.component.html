@@ -29,6 +29,7 @@
           </div>
 
           <div class="exercise-weight-container" >
+            <app-number-input-h [value]="weight" (valueChanged)="setExerciseRepWeight(muscleGroupIndex, exerciseIndex , setIndex , $event)" *ngFor="let weight of exercise.repWeight ; let setIndex = index"></app-number-input-h>
           </div>
         </div>
       </div>
