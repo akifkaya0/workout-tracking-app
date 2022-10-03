@@ -1,0 +1,28 @@
+.count-container {
+  width: 60px;
+  border-radius: 20px;
+  height: 40px;
+  border: 1px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+
+  &:hover {
+    width: 100px;
+    padding: 0px 5px;
+
+    button {
+      transition: 0.5s;
+      opacity: 0.7;
+      visibility: visible;
+    }
+  }
+
+  button {
+    opacity: 0;
+    margin: 0px 5px;
+    visibility: hidden;
+  }
+
+}

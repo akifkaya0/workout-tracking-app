@@ -4,6 +4,7 @@
 
     <mat-card-header>
       <mat-card-title>{{item.title}}</mat-card-title>
+      <app-number-input-v [value]="item.exercises.length" (valueChanged)="setExerciseLengthValue(muscleGroupIndex , $event)"></app-number-input-v>
       <h3>Egzersiz</h3>
     </mat-card-header>
 
@@ -21,6 +22,9 @@
           </mat-form-field>
 
           <div class="set-repetition-container">
+            <app-number-input-v [value]="exercise.numberOfSets" (valueChanged)="setExerciseNumberOfSets(muscleGroupIndex, exerciseIndex , $event)"></app-number-input-v>
+            <h3>Set</h3>
+            <app-number-input-v [value]="exercise.numberOfRepetitions" (valueChanged)="setExerciseNumberOfRepetitions(muscleGroupIndex, exerciseIndex , $event)"></app-number-input-v>
             <h3>Tekrar</h3>
           </div>
 

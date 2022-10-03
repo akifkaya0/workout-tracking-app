@@ -14,6 +14,11 @@ import {MatRadioModule} from '@angular/material/radio';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 import {HttpClientModule} from '@angular/common/http';
+import { TrainingComponent } from './page/training/training.component';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { TrainingDetailComponent } from './page/training/training-detail/training-detail.component';
+import {MatSelectModule} from '@angular/material/select';
+import { NumberInputVComponent } from './shared/number-input-v/number-input-v.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +26,9 @@ import {HttpClientModule} from '@angular/common/http';
     NavBarComponent
     NavBarComponent,
     CalendarComponent,
+    TrainingComponent,
+    TrainingDetailComponent,
+    NumberInputVComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,6 +41,8 @@ import {HttpClientModule} from '@angular/common/http';
     MatButtonModule,
     HttpClientModule,
     ReactiveFormsModule,
+    MatCheckboxModule,
+    MatSelectModule,
   ],
   providers: [Globals],
   bootstrap: [AppComponent]
