@@ -1,0 +1,102 @@
+.container {
+  width: 100%;
+  background-color: #1f1e26;
+  display: flex;
+  flex-direction: column;
+}
+
+.add-new-muscle-button {
+  border: groove white;
+  background-color: transparent !important;
+  color: white;
+  width: 100%;
+
+  fa-icon {
+    padding: 5px;
+    border-style: groove;
+    border-radius: 22px;
+
+    ::ng-deep.svg-inline--fa {
+      height: 1em;
+      width: 1.3em;
+    }
+  }
+}
+
+
+.muscle-group {
+  width: 100%;
+  height: 60px;
+  margin: 1% !important;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #353D49;
+
+  span {
+    color: white;
+    font-weight: 500;
+    text-align: center;
+  }
+
+}
+
+.add-new-muscle-card{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px 300px;
+  flex-wrap: wrap;
+  animation: slide-in-left 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  height: 200px;
+
+  button{
+    width: 20%;
+    margin : 10px;
+  }
+  mat-form-field{
+    width: 80%;
+    margin: 10px;
+  }
+
+}
+
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-400px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+::ng-deep {
+
+  .mat-form-field {
+    line-height: 1;
+    width: 100%;
+  }
+
+  .mat-form-field-wrapper {
+    padding-bottom: 0;
+  }
+
+  .mat-form-field-appearance-outline .mat-form-field-infix {
+    padding: 12px 0 12px 0;
+    border-top: 3px solid transparent !important;
+  }
+
+  .mat-form-field-appearance-outline {
+
+    .mat-form-field-outline-start,
+    .mat-form-field-outline-gap,
+    .mat-form-field-outline-end {
+      border-color: white !important;
+      border-width: 3px !important;
+    }
+
+  }
+}

@@ -1,0 +1,56 @@
+<mat-card class="container">
+
+  <button (click)="isNewGroup = true" mat-flat-button class="add-new-muscle-button muscle-group">
+    <fa-icon [icon]="faPlus"></fa-icon>
+  </button>
+
+  <div *ngIf="isNewGroup" class="muscle-group add-new-muscle-card">
+    <mat-form-field appearance="outline">
+      <input matInput placeholder="Örn : Biceps" [(ngModel)]="newMuscleTitle">
+    </mat-form-field>
+
+    <button mat-raised-button (click)="isNewGroup = false ; this.newMuscleTitle = ''">
+      İptal
+    </button>
+    <button mat-raised-button (click)="addNewMuscleGroup()">
+      Oluştur
+    </button>
+  </div>
+
+  <button [routerLink]="'./'+ item.id" mat-flat-button class="muscle-group" *ngFor="let item of this.muscleGroups">
+
+    <span>{{item.title}}</span>
+
+  </button>
+
+</mat-card>
+
+
+
+<!--
+<div *ngIf="isEdit" class="flip-card-edit">
+  <mat-form-field appearance="outline">
+    <input matInput [(ngModel)]="newExerciseTitle">
+    <button matSuffix mat-icon-button (click)="isNewExercise = false ; this.newExerciseTitle = ''">
+      <mat-icon>close</mat-icon>
+    </button>
+    <button matSuffix mat-icon-button (click)="addNewExercise()">
+      <mat-icon>done</mat-icon>
+    </button>
+  </mat-form-field>
+</div>
+
+
+<button (click)="isNewExercise = true" mat-flat-button class="add-new-exercise-button exercise">
+  <fa-icon [icon]="faPlus"></fa-icon>
+</button>
+
+<mat-form-field *ngIf="isNewExercise" appearance="outline">
+  <input matInput [(ngModel)]="newExerciseTitle">
+  <button matSuffix mat-icon-button (click)="isNewExercise = false ; this.newExerciseTitle = ''">
+    <mat-icon>close</mat-icon>
+  </button>
+  <button matSuffix mat-icon-button (click)="addNewExercise()">
+    <mat-icon>done</mat-icon>
+  </button>
+</mat-form-field> -->

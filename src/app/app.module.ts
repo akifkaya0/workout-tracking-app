@@ -19,6 +19,10 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import { TrainingDetailComponent } from './page/training/training-detail/training-detail.component';
 import {MatSelectModule} from '@angular/material/select';
 import { NumberInputVComponent } from './shared/number-input-v/number-input-v.component';
+import { NumberInputHComponent } from './shared/number-input-h/number-input-h.component';
+import { MuscleGroupsComponent } from './page/muscle-groups/muscle-groups.component';
+import {MatInputModule} from '@angular/material/input';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -29,6 +33,7 @@ import { NumberInputVComponent } from './shared/number-input-v/number-input-v.co
     TrainingComponent,
     TrainingDetailComponent,
     NumberInputVComponent,
+    MuscleGroupsComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,6 +48,9 @@ import { NumberInputVComponent } from './shared/number-input-v/number-input-v.co
     ReactiveFormsModule,
     MatCheckboxModule,
     MatSelectModule,
+    MatDividerModule,
+    MatInputModule,
+    MatIconModule
   ],
   providers: [Globals],
   bootstrap: [AppComponent]

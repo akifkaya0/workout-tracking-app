@@ -1,25 +1,59 @@
 {
-  "workoutDay" : [
+  "workoutDay": [
     {
-      "id" : "1",
-      "day" : 28,
-      "month" : 9,
-      "muscleGroups" : ["Göğüs" , "Triceps"]
+      "id": "1",
+      "day": 28,
+      "month": 9,
+      "muscleGroups": [
+        "Göğüs",
+        "Triceps"
+      ]
     },
     {
-      "day" : 29,
-      "month" : 9,
-      "muscleGroups" : ["Göğüs" , "Triceps"]
+      "day": 29,
+      "month": 9,
+      "muscleGroups": [
+        "Göğüs",
+        "Triceps"
+      ]
     },
     {
-      "day" : 28,
-      "month" : 8,
-      "muscleGroups" : ["Göğüs" , "Triceps"]
+      "day": 28,
+      "month": 8,
+      "muscleGroups": [
+        "Göğüs",
+        "Triceps"
+      ]
+    },
+    {
+      "day": 27,
+      "month": 7
     }
-    ,
+  ],
+  "muscleGroupsDetails": [
     {
-      "day" : 27,
-      "month" : 7
+      "id": "6dcbd",
+      "title": "Göğüs",
+      "className": "gogus",
+      "exercises": []
+    },
+    {
+      "id": "7d314",
+      "title": "Biceps",
+      "className": "biceps",
+      "exercises": []
+    },
+    {
+      "id": "84616",
+      "title": "Triceps",
+      "className": "triceps",
+      "exercises": []
+    },
+    {
+      "id": "c8659",
+      "title": "Sırt",
+      "className": "sirt",
+      "exercises": []
     }
   ]
 }
