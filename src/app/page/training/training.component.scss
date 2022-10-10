@@ -1,3 +1,5 @@
+@import "/src/muscle-group-images.scss";
+
 .training-container {
   height: auto;
   display: flex;
@@ -83,83 +85,4 @@ mat-checkbox {
     background-color: rgb(0, 0, 0, 0) !important;
   }
 
-}
-
-
-
-
-
-// background images
-
-.gogus {
-  ::ng-deep .mat-checkbox-layout::before {
-    content : "Göğüs"
-  }
-  ::ng-deep .mat-checkbox-frame{
-    background-image: url("/assets/gogus.png");
-  }
-
-}
-
-.biceps {
-  ::ng-deep .mat-checkbox-layout::before {
-    content : "Biceps"
-  }
-  ::ng-deep .mat-checkbox-frame{
-    background-image: url("/assets/biceps.png");
-  }
-}
-
-.sırt {
-  ::ng-deep .mat-checkbox-layout::before {
-    content : "Sırt"
-  }
-  ::ng-deep .mat-checkbox-frame{
-    background-image: url("/assets/sırt.png");
-  }
-}
-
-.triceps {
-  ::ng-deep .mat-checkbox-layout::before {
-    content : "Triceps"
-  }
-  ::ng-deep .mat-checkbox-frame{
-    background-image: url("/assets/triceps.png");
-  }
-}
-
-.omuz {
-  ::ng-deep .mat-checkbox-layout::before {
-    content : "Omuz"
-  }
-  ::ng-deep .mat-checkbox-frame{
-    background-image: url("/assets/omuz.png");
-  }
-}
-
-.bacak {
-  ::ng-deep .mat-checkbox-layout::before {
-    content : "Bacak"
-  }
-  ::ng-deep .mat-checkbox-frame{
-    background-image: url("/assets/bacak.png");
-  }
-}
-
-.bilek {
-  ::ng-deep .mat-checkbox-layout::before {
-    content : "Bilek"
-  }
-  ::ng-deep .mat-checkbox-frame{
-    background-image: url("/assets/bilek.png");
-  }
-}
-
-.trapez {
-  ::ng-deep .mat-checkbox-layout::before {
-    content : "Trapez"
-  }
-  ::ng-deep .mat-checkbox-frame{
-    background-image: url("/assets/trapez.png");
-  }
 }

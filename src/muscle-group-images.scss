@@ -1,0 +1,99 @@
+.gogus {
+  ::ng-deep .mat-checkbox-layout::before {
+    content: "Göğüs"
+  }
+
+  ::ng-deep .mat-checkbox-frame {
+    background-image: url("/assets/gogus.png");
+  }
+}
+
+.biceps {
+  ::ng-deep .mat-checkbox-layout::before {
+    content: "Biceps"
+  }
+
+  ::ng-deep .mat-checkbox-frame {
+    background-image: url("/assets/biceps.png");
+  }
+}
+
+.sirt {
+  ::ng-deep .mat-checkbox-layout::before {
+    content: "Sırt"
+  }
+
+  ::ng-deep .mat-checkbox-frame {
+    background-image: url("/assets/sırt.png");
+  }
+}
+
+.triceps {
+  ::ng-deep .mat-checkbox-layout::before {
+    content: "Triceps"
+  }
+
+  ::ng-deep .mat-checkbox-frame {
+    background-image: url("/assets/triceps.png");
+  }
+}
+
+.omuz {
+  ::ng-deep .mat-checkbox-layout::before {
+    content: "Omuz"
+  }
+
+  ::ng-deep .mat-checkbox-frame {
+    background-image: url("/assets/omuz.png");
+  }
+}
+
+.bacak {
+  ::ng-deep .mat-checkbox-layout::before {
+    content: "Bacak"
+  }
+
+  ::ng-deep .mat-checkbox-frame {
+    background-image: url("/assets/bacak.png");
+  }
+}
+
+.bilek {
+  ::ng-deep .mat-checkbox-layout::before {
+    content: "Bilek"
+  }
+
+  ::ng-deep .mat-checkbox-frame {
+    background-image: url("/assets/bilek.png");
+  }
+}
+
+.trapez {
+  ::ng-deep .mat-checkbox-layout::before {
+    content: "Trapez"
+  }
+
+  ::ng-deep .mat-checkbox-frame {
+    background-image: url("/assets/trapez.png");
+  }
+}
+
+
+
+// exercises
+
+.dumbbell-press {
+  background-image: url("assets/exercise/dumbbell-press.png");
+}
+
+.i̇ncline-dumbbell-press{
+  background-image: url("assets/exercise/incline-dumbbell-press.png");
+}
+
+.dumbbell-pullovers{
+  background-image: url("assets/exercise/dumbbell-pullovers.png");
+}
+
+.machine-fly{
+  background-image: url("assets/exercise/machine-fly.png");
+}

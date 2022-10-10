@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Globals } from 'src/app/entity/globals';
+import { MuscleGroup } from 'src/app/entity/muscle-group';
+import { MuscleGroupDetailService } from 'src/app/service/muscle-group-detail.service';
 
 @Component({
   selector: 'app-training',
@@ -9,24 +11,18 @@ import { Globals } from 'src/app/entity/globals';
 })
 export class TrainingComponent implements OnInit {
 
-  trainingGroups = new FormGroup({
-    'Göğüs': new FormControl(false),
-    'Biceps': new FormControl(false),
-    'Sırt': new FormControl(false),
-    'Triceps': new FormControl(false),
-    'Omuz': new FormControl(false),
-    'Bacak': new FormControl(false),
-    'Bilek': new FormControl(false),
-    'Trapez': new FormControl(false),
-  });
+  muscleGroups : MuscleGroup[] = [];
+  trainingGroups : FormGroup | undefined
 
-  global : Globals
-
-  constructor(global : Globals) {
-    this.global = global
+  constructor(private detailService : MuscleGroupDetailService) {
   }
 
   ngOnInit(): void {
+    this.detailService.getAllDetails().subscribe(response => {
+      this.muscleGroups = response
+
+      this.trainingGroups = this.detailService.toFormGroup(this.muscleGroups)
+    })
   }
 
 }

@@ -1,5 +1,7 @@
+import { MuscleGroupExerciseDetail } from "./muscle-group-exercise-detail"
+
 export interface MuscleGroupExercise {
-  title : string,
+  detail : MuscleGroupExerciseDetail,
   numberOfSets : number,
   numberOfRepetitions : number,
   repWeight : number[],

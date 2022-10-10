@@ -1,12 +1,14 @@
 <div class="training-header">
   <h2>Bugün Ne Çalıştın?</h2>
   <button mat-stroked-button
-  [routerLink]="['/training-detail']" [queryParams]="trainingGroups.value">İleri</button>
+  [routerLink]="['/training-detail']" [queryParams]="trainingGroups?.value" *ngIf="muscleGroups.length">İleri</button>
 </div>
 
 <div class="training-container">
-  <section [formGroup]="trainingGroups">
-    <mat-checkbox *ngFor="let item of global.allMuscleGroups.slice(1) ; let i = index" [class]="global.allMuscleGroups[i+1].className"
-      [formControlName]="item.name" color="primary"></mat-checkbox>
+  <section *ngIf="trainingGroups" [formGroup]="trainingGroups">
+    <mat-checkbox *ngFor="let item of muscleGroups ; let i = index" [class]="item.className"
+      [formControlName]="item.title" color="primary"></mat-checkbox>
   </section>
+
+  <h4 *ngIf="!muscleGroups.length">Lütfen 'Kas Grupları' Sayfasından bir kas grubu ekleyiniz !</h4>
 </div>
