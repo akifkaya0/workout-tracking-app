@@ -1,0 +1,33 @@
+<div class="detail-container">
+
+  <button  [ngClass]="{'width600' : isNewExercise}" (click)="isNewExercise = true" mat-flat-button class="add-new-button">
+
+    <fa-icon *ngIf="!isNewExercise" [icon]="faPlus"></fa-icon>
+
+    <div *ngIf="isNewExercise" class="add-new-card">
+      <mat-form-field appearance="outline">
+        <input matInput placeholder="Kas Grubu İsmi" [(ngModel)]="newExerciseTitle">
+      </mat-form-field>
+
+      <button mat-stroked-button (click)="cancelAddNewExercise($event)">
+        İptal
+      </button>
+      <button mat-stroked-button (click)="addNewExercise($event)">
+        Oluştur
+      </button>
+    </div>
+  </button>
+
+  <div *ngFor="let item of muscleGroup?.exercises ; let i = index" class="exercises">
+    <span>{{item.detail.name}}</span>
+    <div>
+      <button (click)="favoriteHandle(i)" mat-icon-button>
+        <mat-icon>{{item.detail.isFavorite ? 'star' : 'star_outlined'}}</mat-icon>
+      </button>
+      <button (click)="deleteExercises(item.detail , i)" mat-icon-button>
+        <mat-icon color="warn">delete</mat-icon>
+      </button>
+    </div>
+  </div>
+
+</div>
