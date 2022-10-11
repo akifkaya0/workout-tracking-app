@@ -1,43 +1,55 @@
 <div class="training-detail-container">
 
-  <mat-card *ngFor="let item of selectedMuscleGroups ; let muscleGroupIndex = index">
+  <mat-card *ngFor="let item of this.selectedMuscleGroupsView ; let muscleGroupIndex = index">
 
     <mat-card-header>
       <mat-card-title>{{item.title}}</mat-card-title>
-      <app-number-input-v [value]="item.exercises.length" (valueChanged)="setExerciseLengthValue(muscleGroupIndex , $event)"></app-number-input-v>
+      <app-number-input-v [value]="item.exercises.length"
+        (valueChanged)="setExerciseLengthValue(muscleGroupIndex , $event)"></app-number-input-v>
       <h3>Egzersiz</h3>
     </mat-card-header>
 
-    <div class="exercise-container">
-      <div [class]="'exercise'" *ngFor="let exercise of item.exercises ; let exerciseIndex = index">
-        <div class="exercise-image"></div>
+    <div class="exercise-container" *ngIf="checkMuscleGroupExercise(item.title)">
+      <div class="exercise" *ngFor="let exercise of item.exercises; let exerciseIndex = index">
+        <div [class]="exercise.detail.className + ' exercise-image'">
+          <div></div>
+        </div>
         <div class="exercise-content">
 
           <mat-form-field appearance="outline">
-            <mat-select [(ngModel)]="exercise.title" name="food">
-              <mat-option *ngFor="let title of getAllExercises(item.title)" [value]="title">
-                {{title}}
+            <mat-select [id]="exercise.detail.className" [ngModel]="exercise.detail.name" (ngModelChange)="selectedExerciseHandle(item.title , muscleGroupIndex , exerciseIndex , $event)">
+              <mat-option [disabled]="checkExerciseInView(itemExercise.detail.name , muscleGroupIndex)" *ngFor="let itemExercise of getAllExercises(item.title)" [value]="itemExercise.detail.name">
+                {{itemExercise.detail.name}}
               </mat-option>
             </mat-select>
           </mat-form-field>
 
           <div class="set-repetition-container">
-            <app-number-input-v [value]="exercise.numberOfSets" (valueChanged)="setExerciseNumberOfSets(muscleGroupIndex, exerciseIndex , $event)"></app-number-input-v>
+            <app-number-input-v [value]="exercise.numberOfSets"
+              (valueChanged)="setExerciseNumberOfSets(muscleGroupIndex, exerciseIndex , $event)"></app-number-input-v>
             <h3>Set</h3>
-            <app-number-input-v [value]="exercise.numberOfRepetitions" (valueChanged)="setExerciseNumberOfRepetitions(muscleGroupIndex, exerciseIndex , $event)"></app-number-input-v>
+            <app-number-input-v [value]="exercise.numberOfRepetitions"
+              (valueChanged)="setExerciseNumberOfRepetitions(muscleGroupIndex, exerciseIndex , $event)">
+            </app-number-input-v>
             <h3>Tekrar</h3>
           </div>
 
-          <div class="exercise-weight-container" >
-            <app-number-input-h [value]="weight" (valueChanged)="setExerciseRepWeight(muscleGroupIndex, exerciseIndex , setIndex , $event)" *ngFor="let weight of exercise.repWeight ; let setIndex = index"></app-number-input-h>
+          <div class="exercise-weight-container">
+            <app-number-input-h [value]="weight" [id]="setIndex"
+              (valueChanged)="setExerciseRepWeight(muscleGroupIndex, exerciseIndex , setIndex , $event)"
+              *ngFor="let weight of exercise.repWeight ; let setIndex = index"></app-number-input-h>
           </div>
         </div>
       </div>
     </div>
 
-
+    <h4 class="warning" *ngIf="!selectedMuscleGroups[muscleGroupIndex].exercises.length">Lütfen 'Kas Grupları' Sayfasından mevcut kas grubuna bir egzersiz ekleyiniz.</h4>
+    <h5 class="warning" *ngIf="!item.exercises.length && selectedMuscleGroups[muscleGroupIndex].exercises.length">Kas grubunu seçtikten sonra ekrana gelen egzersizler favori olarak seçilen egzersizlerdir. Eğer bu uyarıyı alıyorsanız mevcut kas grubuna favori egzersiz seçin veya yukarıdaki egzersiz değerini arttırın.</h5>
 
   </mat-card>
 
-</div>
+  <div class="save">
+    <button (click)="submitTraining()" mat-flat-button>Kaydet</button>
+  </div>
 
+</div>

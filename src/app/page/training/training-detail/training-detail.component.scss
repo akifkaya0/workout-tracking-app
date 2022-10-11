@@ -1,4 +1,5 @@
 @import '../training.component.scss';
+@import '/src/muscle-group-images.scss';
 
 .training-detail-container {
   width: 100%;
@@ -36,11 +37,10 @@
     justify-content: center;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.8);
 
-    div {
-      height: 100%;
-      filter: brightness(0.9);
-    }
   }
 
   .exercise-content {
@@ -50,11 +50,21 @@
 
 
     mat-form-field {
-
+      display: flex;
+      justify-content: center;
       margin-top: 10px;
     }
 
     ::ng-deep {
+
+      .mat-form-field-appearance-outline .mat-form-field-infix {
+        border-top: 13px solid transparent !important;
+      }
+
+
+      .mat-form-field-appearance-outline .mat-form-field-outline-thick {
+        opacity: 0.5 !important;
+      }
 
       .mat-select-value,
       ::ng-deep .mat-select-arrow,
@@ -63,11 +73,11 @@
       }
 
       .mat-form-field {
-        font-size: 18px;
+        font-size: 14px;
       }
 
       .mat-form-field-flex {
-        height: 45px !important;
+        height: 38px !important;
         width: 280px !important;
         text-align: center !important;
       }
@@ -88,6 +98,8 @@
         padding-bottom: 0;
       }
 
+
+
     }
 
   }
@@ -96,6 +108,15 @@
 
 h3 {
   margin: 0px 10px;
+}
+
+h4,
+h5 {
+  font-weight: 400;
+}
+
+.warning {
+  color: #cc3300;
 }
 
 .set-repetition-container {
@@ -113,11 +134,31 @@ h3 {
 
   font-size: 30px;
   font-weight: 700;
-  height: 170px;
+  height: 180px;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
+  flex-wrap: wrap;
 
 }
 
 
+
+@media screen and (max-width: 1400px) {
+  .exercise {
+    width: 100%;
+  }
+}
+
+
+
+.save{
+  width : 100%;
+  display: flex;
+  justify-content: center;
+
+  button{
+    margin : 50px;
+    width: 150px;
+  }
+}
