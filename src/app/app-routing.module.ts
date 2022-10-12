@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CalendarComponent } from './page/calendar/calendar.component';
+import { MuscleGroupDetailComponent } from './page/muscle-groups/muscle-group-detail/muscle-group-detail.component';
 import { MuscleGroupsComponent } from './page/muscle-groups/muscle-groups.component';
 import { TrainingDetailComponent } from './page/training/training-detail/training-detail.component';
 import { TrainingComponent } from './page/training/training.component';

@@ -1,5 +1,17 @@
 @import "/src/muscle-group-images.scss";
 
+.date{
+  ::ng-deep{
+    .mat-datepicker-toggle{
+      color : white !important;
+    }
+
+    .mat-form-field-label{
+      color: rgba($color: #ffffff, $alpha: 0.5);
+    }
+  }
+}
+
 .training-container {
   height: auto;
   display: flex;

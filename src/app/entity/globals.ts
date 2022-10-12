@@ -1,4 +1,5 @@
-import { faCalendarDays, faCaretLeft, faCaretRight, faChartColumn, faDumbbell, faFire, faHome } from '@fortawesome/free-solid-svg-icons';
+import { faAngleDown, faAngleUp, faCalendarDays, faCaretLeft, faCaretRight, faChartColumn, faDumbbell, faFire, faHome, faMinus, faPersonWalking, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { MuscleGroupExercise } from './muscle-group-exercise';
 import { NavBarItem } from './nav-bar-item';
 
 export class Globals {
@@ -10,8 +11,29 @@ export class Globals {
     "calendarIcon": faCalendarDays,
     "trainingIcon": faFire,
     "rightArrow": faCaretRight,
-    "leftArrow": faCaretLeft
+    "leftArrow": faCaretLeft,
+    "plus": faPlus,
+    "minus": faMinus,
+    "muscleGroupIcon" : faPersonWalking,
+    "angleUp" : faAngleUp,
+    "angleDown" : faAngleDown
   }
+
+  turkishtoEnglish = (word: string) => {
+    return word.replace('Ğ', 'g')
+      .replace('Ü', 'u')
+      .replace('Ş', 's')
+      .replace('I', 'i')
+      .replace('İ', 'i')
+      .replace('Ö', 'o')
+      .replace('Ç', 'c')
+      .replace('ğ', 'g')
+      .replace('ü', 'u')
+      .replace('ş', 's')
+      .replace('ı', 'i')
+      .replace('ö', 'o')
+      .replace('ç', 'c');
+  };
 
   public pages: NavBarItem[] = [
     { title: "Ana Sayfa", icon: this.icons["homeIcon"], path: "/home" },

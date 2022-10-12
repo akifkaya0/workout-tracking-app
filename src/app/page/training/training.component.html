@@ -1,5 +1,13 @@
 <div class="training-header">
-  <h2>Bugün Ne Çalıştın?</h2>
+
+  <mat-form-field class="date" appearance="fill">
+    <mat-label>Lütfen Bir Tarih Seçin</mat-label>
+    <input matInput [matDatepickerFilter]="workoutDayFilter" [value]="selectedDate.value" [matDatepicker]="picker">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker  #picker></mat-datepicker>
+  </mat-form-field>
+
+  <h2>Ne Çalıştın?</h2>
   <button mat-stroked-button
   [routerLink]="['/training-detail']" [queryParams]="trainingGroups?.value" *ngIf="muscleGroups.length">İleri</button>
 </div>
