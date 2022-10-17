@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { MuscleGroup } from '../entity/muscle-group';
 import { BaseService } from './base.service';
+import { CheckboxToBeChecked } from './validators/checkbox-to-be-checked';
 
 @Injectable({
   providedIn: 'root'
@@ -41,7 +42,7 @@ export class MuscleGroupDetailService extends BaseService {
     muscleGroups.forEach(item => {
       group[item.title] = new FormControl(false)
     });
-    return new FormGroup(group)
+    return new FormGroup(group , CheckboxToBeChecked.requireCheckboxesToBeCheckedValidator);
   }
 
 }

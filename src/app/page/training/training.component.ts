@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Globals } from 'src/app/entity/globals';
 import { MuscleGroup } from 'src/app/entity/muscle-group';
 import { WorkoutDay } from 'src/app/entity/workout-day';
@@ -17,9 +18,9 @@ export class TrainingComponent implements OnInit {
   trainingGroups: FormGroup | undefined;
   allWorkoutDay: WorkoutDay[] = [];
 
-  selectedDate = new FormControl(new Date());
+  selectedDate = new FormControl<Date | null>(null , [Validators.required]);
 
-  constructor(private workoutDayService: WorkoutDayService, private detailService: MuscleGroupDetailService) {
+  constructor(private router : Router , private workoutDayService: WorkoutDayService, private detailService: MuscleGroupDetailService) {
   }
 
   ngOnInit(): void {
@@ -36,7 +37,6 @@ export class TrainingComponent implements OnInit {
   }
 
   workoutDayFilter = (date: Date | null): boolean => {
-    console.log(this.selectedDate.value)
 
     const dateObject = (date || new Date());
     return this.allWorkoutDay.find(item => {
@@ -44,5 +44,12 @@ export class TrainingComponent implements OnInit {
     }) ? false : true;
 
   };
+
+  goToTrainingDetail(){
+
+
+    this.router.navigate(['/training-detail'], { queryParams:  {...this.trainingGroups?.value , 'date' : this.selectedDate.value?.toLocaleDateString()} });
+
+  }
 
 }
